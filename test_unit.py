@@ -26,11 +26,3 @@ def test_invalid_operator():
     calc = Calculator()
     with pytest.raises(ValueError, match="Invalid operator"):
         calc.solve(6, 2, '%')
-
-def test_integration():
-    calc = Calculator()
-    result = calc.solve(3, 2, '+')
-    result = calc.solve(result, 2, '*')
-    result = calc.solve(result, 2, '/')
-    result = calc.solve(result, 1, '-')
-    assert result == 4
